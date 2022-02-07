@@ -3,6 +3,7 @@
 namespace Knp\Bundle\GaufretteBundle;
 
 use Gaufrette\FilesystemMapInterface;
+use Traversable;
 
 /**
  * Holds references to all declared filesystems
@@ -55,7 +56,7 @@ class FilesystemMap implements \IteratorAggregate, FilesystemMapInterface
         return isset($this->maps[$name]);
     }
 
-    public function getIterator()
+    public function getIterator(): Traversable
     {
         return new \ArrayIterator($this->maps);
     }
